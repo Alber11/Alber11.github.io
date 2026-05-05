@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tech Portfolio V1</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#849495",
+              primary: "#dbfcff",
+              "on-surface": "#d4e4fa",
+              "on-secondary-fixed-variant": "#74009f",
+              "tertiary-container": "#d1d9f3",
+              "secondary-container": "#b600f8",
+              "on-secondary-fixed": "#320047",
+              "on-error": "#690005",
+              error: "#ffb4ab",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "inverse-surface": "#d4e4fa",
+              "secondary-fixed-dim": "#ebb2ff",
+              "secondary-fixed": "#f8d8ff",
+              "on-primary-container": "#006970",
+              "primary-container": "#00f0ff",
+              "inverse-primary": "#006970",
+              "tertiary-fixed-dim": "#bec6e0",
+              "on-primary-fixed": "#002022",
+              tertiary: "#f5f5ff",
+              "inverse-on-surface": "#233143",
+              "on-tertiary-container": "#575e75",
+              "on-primary-fixed-variant": "#004f54",
+              "tertiary-fixed": "#dae2fd",
+              "primary-fixed": "#7df4ff",
+              "outline-variant": "#3b494b",
+              "on-surface-variant": "#b9cacb",
+              surface: "#051424",
+              "surface-tint": "#00dbe9",
+              "surface-container-lowest": "#010f1f",
+              "surface-container-highest": "#273647",
+              "primary-fixed-dim": "#00dbe9",
+              "on-tertiary-fixed": "#131b2e",
+              "on-background": "#d4e4fa",
+              "on-secondary-container": "#fff6fc",
+              "surface-container": "#122131",
+              "on-secondary": "#520072",
+              "surface-variant": "#273647",
+              "error-container": "#93000a",
+              "on-primary": "#00363a",
+              "surface-dim": "#051424",
+              "surface-bright": "#2c3a4c",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#283044",
+              secondary: "#ebb2ff",
+              "surface-container-high": "#1c2b3c",
+              background: "#051424",
+              "surface-container-low": "#0d1c2d",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "container-max": "1280px",
+              base: "4px",
+              margin: "48px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              label: ["Space Grotesk"],
+              h2: ["Space Grotesk"],
+              "body-md": ["Inter"],
+              h3: ["Space Grotesk"],
+              h1: ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              code: ["Inter"],
+            },
+            fontSize: {
+              label: [
+                "13px",
+                {
+                  lineHeight: "1",
+                  fontWeight: "700",
+                },
+              ],
+              h2: [
+                "42px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "1.6",
+                  fontWeight: "400",
+                },
+              ],
+              h3: [
+                "30px",
+                {
+                  lineHeight: "1.3",
+                  fontWeight: "600",
+                },
+              ],
+              h1: [
+                "56px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "1.6",
+                  fontWeight: "400",
+                },
+              ],
+              code: [
+                "15px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        background: linear-gradient(180deg, #020617 0%, #051424 100%);
+        color: #d4e4fa;
+      }
+
+      .glass-panel {
+        background: rgba(39, 54, 71, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(132, 148, 149, 0.3);
+        box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+      }
+
+      .glass-panel:hover {
+        border-color: #00f0ff;
+        box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1),
+          0 0 15px rgba(0, 240, 255, 0.2);
+      }
+
+      .glow-text {
+        text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+      }
+
+      .glow-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #00f0ff 50%,
+          transparent 100%
+        );
+        opacity: 0.5;
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, #00f0ff, #7df4ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-body-md bg-background min-h-screen flex flex-col relative">
+    <main class="flex-grow pt-12 pb-20">
+      <!-- Section 1: Hero Intro -->
+      <section
+        class="min-h-[819px] flex flex-col justify-center items-center px-4 md:px-margin relative overflow-hidden"
+        id="intro"
+      >
+        <div class="max-w-[800px] w-full text-center z-10 relative">
+          <h1 class="font-h1 text-h1 text-on-background mb-6 mt-8">
+            ALBERTO MARTIN<br />
+            <span class="gradient-text glow-text">Software Developer</span>
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12"
+          >
+            Software Developer in training (Double Degree in Web Application
+            Development/Web Application Development) with a bilingual profile
+            and a solid technical foundation in Java and web technologies.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <a
+              class="bg-primary-container text-on-primary-container font-label text-label px-8 py-4 rounded shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] transition-all uppercase tracking-wider w-full sm:w-auto text-center"
+              href="#projects-section"
+              >Projects
+            </a>
+            <a
+              class="glass-panel text-primary font-label text-label px-8 py-4 rounded hover:bg-white/5 transition-all uppercase tracking-wider w-full sm:w-auto text-center border border-primary/50"
+              href="#capabilities-section"
+              >capabilities</a
+            >
+          </div>
+        </div>
+      </section>
+      
+      <!-- Glow Divider -->
+      <div class="w-full max-w-7xl mx-auto px-margin my-20">
+        <div class="glow-divider"></div>
+      </div>
+
+      <!-- Section 2: About / Profile -->
+      <section class="py-32 px-4 md:px-margin mx-auto scroll-mt-24 max-w-7xl" id="profile">
+        <div class="mb-16">
+          <h2 class="font-h1 text-h1 text-on-background mb-6">
+            Trajectory // <span class="text-primary-fixed">Profile</span>
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Academic progresion and core operational parameters.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div class="glass-panel rounded-2xl col-span-1 lg:col-span-8 flex flex-col justify-between p-8 md:p-10">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <span class="material-symbols-outlined text-primary-fixed text-5xl">terminal</span>
+                <h3 class="font-h2 text-h2 text-on-background">Current_Runtime</h3>
+              </div>
+              <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-snug">
+                Specialized in web development (HTML/CSS/JS), and cross-platform
+                development with Java, SQL database management (Oracle/MySQL),
+                and cloud infrastructure (AWS). Certified in Cisco networking
+                fundamentals and experienced with version control using
+                Git/GitHub. I excel at self-directed learning and have a
+                problem-solving approach focused on software efficiency.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 border-t border-outline-variant/50 mt-8 pt-6">
+              <div>
+                <span class="block font-label text-sm text-outline uppercase tracking-wider mb-2">Status</span>
+                <span class="font-code text-lg text-primary-fixed">Active_Development</span>
+              </div>
+              <div>
+                <span class="block font-label text-sm text-outline uppercase tracking-wider mb-2">Location</span>
+                <span class="font-code text-lg text-on-surface">MADRID</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 lg:col-span-4 flex flex-col gap-10 h-full">
+            <div class="glass-panel rounded-2xl p-10 relative overflow-hidden group flex-1 flex flex-col justify-center">
+              <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+                <span class="material-symbols-outlined text-8xl text-secondary-container">workspace_premium</span>
+              </div>
+              <span class="font-label text-sm text-secondary uppercase tracking-wider mb-3 block relative z-10">Certification</span>
+              <h4 class="font-h3 text-h3 text-on-background font-bold mb-2 relative z-10">
+                AWS Academy Graduate Cloud Foundations Training Badge
+              </h4>
+              <p class="font-code text-lg text-outline-variant relative z-10">Issued: 2026</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-10 relative overflow-hidden group flex-1 flex flex-col justify-center">
+              <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
+                <span class="material-symbols-outlined text-8xl text-secondary-container">workspace_premium</span>
+              </div>
+              <span class="font-label text-sm text-secondary uppercase tracking-wider mb-3 block relative z-10">Certification</span>
+              <h4 class="font-h3 text-h3 text-on-background font-bold mb-2 relative z-10">
+                Networking Basics, Cisco
+              </h4>
+              <p class="font-code text-lg text-outline-variant relative z-10">Issued: 2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 col-span-full">
+          <div class="glass-panel rounded-2xl p-10 md:p-16 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-4 mb-8">
+                <span class="material-symbols-outlined text-primary-fixed text-5xl">share</span>
+                <h3 class="font-h2 text-h2 text-on-background">Network_Sync // LinkedIn_Updates</h3>
+              </div>
+              <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                I regularly post my academic progress and technical milestones
+                on LinkedIn. I invite you to check my profile for the latest
+                updates on my studies, certifications, and ongoing projects as I
+                continue my journey in software development.
+              </p>
+            </div>
+            <div class="mt-10">
+              <a class="inline-flex items-center gap-2 font-code text-lg text-primary-fixed hover:text-primary transition-all" href="#">
+                <span class="material-symbols-outlined">open_in_new</span>
+                View Latest Updates
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Glow Divider -->
+      <div class="w-full max-w-7xl mx-auto px-margin my-20">
+        <div class="glow-divider"></div>
+      </div>
+
+      <!-- Section 3: Projects -->
+      <section class="py-20 px-4 md:px-margin max-w-7xl mx-auto scroll-mt-24" id="projects-section">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <h2 class="font-h2 text-h2 text-on-background mb-4">
+              Deployments // <span class="text-primary-fixed">Projects</span>
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Notable production builds and experimental architectures.
+            </p>
+          </div>
+          <a class="hidden md:flex items-center gap-2 font-label text-label text-primary-fixed hover:text-primary transition-colors uppercase tracking-widest" href="https://github.com/Alber11" target="_blank">
+            View All Repository
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Bento Grid Projects -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          
+          <!-- Project 1 (Large): Servidores Minecraft -->
+          <div class="glass-panel rounded-xl col-span-1 md:col-span-8 overflow-hidden group relative flex flex-col">
+            <div class="h-64 w-full bg-surface-container-high relative overflow-hidden">
+              <img
+                alt="Project 1 Background"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWgC97xr6uiuhZf9cTbqmDfTo1dGNJ1P0A2xqeZmu8A5TuC0fooYRe2GOuM2aJ0GiSupYsRleNHS3vZrzQu3CC0IOsgM3FJMHBY8CSW_fISpSlDO8iqV3_REJ9c1MlWnnlFsyNdJ64THTBNvsghOGHT_lY2gOvNsn15DBOsS5HImZDVlY7JBziAZRGM2Mg0-DCa-G-2NrRUe8VunkrraNcRKrcLkI97Q3gYi__XcQTpAyrpIiWknDWxKca5X9TMRwbKNAJ6mqpriA"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest to-transparent opacity-80"></div>
+              
+              <!-- Language/Tool Tags -->
+              <div class="absolute bottom-4 left-4 flex gap-2">
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Docker
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Docker Compose
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Shell
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-h3 text-h3 text-primary-container mb-2">
+                  Servidores-Minercaft-con-Docker
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                  A comprehensive deployment solution for running and managing customized Minecraft servers using Docker containers. It streamlines server setup, simplifies configuration management, and optimizes resource allocation across different game nodes.
+                </p>
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  class="font-code text-code text-primary-fixed hover:text-primary transition-colors flex items-center gap-2 border border-primary-fixed/50 hover:bg-primary-fixed/10 px-5 py-2 rounded"
+                  href="https://github.com/Alber11/Servidores-Minercaft-con-Docker"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 (Small): checkyourmods -->
+          <div class="glass-panel rounded-xl col-span-1 md:col-span-4 overflow-hidden group relative flex flex-col">
+            <div class="h-48 w-full bg-surface-container-high relative overflow-hidden">
+              <img
+                alt="Project 2 Background"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4RKS8CIK69ZNo4HiaoKQeTSAi4hN6Ta04ui5Fb7pem6NVlkEq3qS1DqtzXEF9N97q-oka2btGDN-5yeoDzTxCxkf32BJT8hbKf7KGft1fEjZj7alr8lj4HNKl6EBUir2YCM15xv9PnL9LAXcXHzYAJ1u9y0CTtH8KlTle-D-el4NbcGItL2yZKZJbrrHyu22OhSa4xvS6wj0vfQM2VNpuII6WLM8RuAGU2MNCH4yibp-MoXGR2hZWLOOSAtCzn0LglPvw0Hm3ulg"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest to-transparent opacity-80"></div>
+              
+              <!-- Language/Tool Tags -->
+              <div class="absolute bottom-4 left-4 flex gap-2 flex-wrap">
+                <span class="bg-surface-container-lowest border border-outline-variant text-secondary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Java
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-secondary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Minecraft
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-body-lg text-body-lg font-bold text-on-background mb-2">
+                  checkyourmods-1.21.1
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">
+                  A specialized toolset for verifying and managing Minecraft modifications for version 1.21.1. Ensures compatibility and system stability when building custom gameplay environments.
+                </p>
+              </div>
+              <a
+                class="font-code text-code text-secondary hover:text-secondary-fixed transition-colors flex items-center gap-2 mt-auto border border-secondary/50 hover:bg-secondary/10 px-4 py-2 rounded w-fit"
+                href="https://github.com/Alber11/checkyourmods-1.21.1"
+                target="_blank"
+              >
+                <span class="material-symbols-outlined text-[18px]">code</span>
+                View Repository
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project 3: Upcoming Project (New layout from image) -->
+          <div class="bg-surface-variant/20 backdrop-blur-md border-2 border-dashed border-outline/30 hover:border-primary-container/50 shadow-[inset_1px_1px_0px_0px_rgba(255,255,255,0.1)] rounded-xl col-span-1 md:col-span-12 overflow-hidden group relative flex flex-col sm:flex-row transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+            
+            <!-- Left Block (+) -->
+            <div class="w-full sm:w-1/4 lg:w-1/5 min-h-[160px] bg-surface-container-highest/20 flex justify-center items-center border-b sm:border-b-0 sm:border-r border-dashed border-outline/30 group-hover:bg-primary-container/5 group-hover:border-primary-container/50 transition-colors duration-300">
+              <span class="material-symbols-outlined text-6xl text-outline/50 group-hover:text-primary-fixed group-hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.8)] transition-all duration-500">
+                add
+              </span>
+            </div>
+            
+            <!-- Right Block (Text) -->
+            <div class="p-6 sm:p-8 flex flex-col justify-center flex-grow">
+              <h3 class="font-h3 text-2xl md:text-h3 text-on-background mb-3 group-hover:text-primary-container transition-colors">
+                Upcoming Project
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                Under construction. Every project is another step forward in learning.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- Glow Divider -->
+      <div class="w-full max-w-7xl mx-auto px-margin my-12">
+        <div class="glow-divider"></div>
+      </div>
+
+      <!-- Section 4: Code Skills -->
+      <section class="py-20 px-4 md:px-margin max-w-7xl mx-auto scroll-mt-24" id="capabilities-section">
+        <div class="mb-12 text-center">
+          <h2 class="font-h2 text-h2 text-on-background mb-4">
+            MATRIX // <span class="text-primary-fixed">CAPABILITIES</span>
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+            Core languages, frameworks, and architectural proficiencies.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-l-4 border-l-primary-container group transition-all duration-300">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary-container text-3xl">code</span>
+                <h4 class="font-h3 text-xl text-on-background uppercase tracking-tighter">01 // LANGUAGES</h4>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Java</span><span class="text-primary-fixed">75%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container shadow-[0_0_10px_#00f0ff]" style="width: 75%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">HTML / CSS</span><span class="text-primary-fixed">65%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container shadow-[0_0_10px_#00f0ff]" style="width: 65%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">JavaScript</span><span class="text-primary-fixed">50%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container shadow-[0_0_10px_#00f0ff]" style="width: 50%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">SQL</span><span class="text-primary-fixed">70%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary-container shadow-[0_0_10px_#00f0ff]" style="width: 70%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-l-4 border-l-secondary-container group transition-all duration-300">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-container text-3xl">terminal</span>
+                <h4 class="font-h3 text-xl text-on-background uppercase tracking-tighter">02 // TECHNOLOGIES</h4>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">JavaFX / FXML</span><span class="text-secondary">80%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary-container shadow-[0_0_10px_#b600f8]" style="width: 80%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">JDBC</span><span class="text-secondary">70%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary-container shadow-[0_0_10px_#b600f8]" style="width: 70%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Spring</span><span class="text-secondary">40%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary-container shadow-[0_0_10px_#b600f8]" style="width: 40%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Maven</span><span class="text-secondary">60%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-secondary-container shadow-[0_0_10px_#b600f8]" style="width: 60%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-l-4 border-l-tertiary-container group transition-all duration-300">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary-container text-3xl">database</span>
+                <h4 class="font-h3 text-xl text-on-background uppercase tracking-tighter">03 // DATABASES</h4>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">MySQL</span><span class="text-tertiary-fixed-dim">75%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-tertiary-container shadow-[0_0_10px_#d1d9f3]" style="width: 75%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">PostgreSQL</span><span class="text-tertiary-fixed-dim">55%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-tertiary-container shadow-[0_0_10px_#d1d9f3]" style="width: 55%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Basic SQL</span><span class="text-tertiary-fixed-dim">75%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-tertiary-container shadow-[0_0_10px_#d1d9f3]" style="width: 75%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-l-4 border-l-outline group transition-all duration-300">
+            <div class="flex items-center justify-between mb-8">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-outline text-3xl">build</span>
+                <h4 class="font-h3 text-xl text-on-background uppercase tracking-tighter">04 // TOOLS</h4>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Git / GitHub</span><span class="text-primary-fixed">75%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-outline shadow-[0_0_10px_#849495]" style="width: 75%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">IntelliJ IDEA</span><span class="text-primary-fixed">85%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-outline shadow-[0_0_10px_#849495]" style="width: 85%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Scene Builder</span><span class="text-primary-fixed">80%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-outline shadow-[0_0_10px_#849495]" style="width: 80%"></div></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between font-code text-sm"><span class="text-on-surface-variant">Linux</span><span class="text-primary-fixed">60%</span></div>
+                <div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-outline shadow-[0_0_10px_#849495]" style="width: 60%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Glow Divider -->
+    <div class="w-full max-w-7xl mx-auto px-margin my-20">
+      <div class="glow-divider"></div>
+    </div>
+
+    <!-- Section 5: Contact -->
+    <section class="py-20 px-4 md:px-margin max-w-7xl mx-auto scroll-mt-24 mb-20" id="contact-section">
+      <div class="mb-12 text-center">
+        <h2 class="font-h2 text-h2 text-on-background mb-4">
+          Connect // <span class="text-primary-fixed">Network</span>
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+          Available for collaborations and technical inquiries.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-b-4 border-b-primary-container group transition-all duration-300 flex flex-col items-center text-center" href="mailto:albermargar9@gmail.com">
+          <div class="mb-6 p-4 rounded-full bg-primary-container/10 group-hover:bg-primary-container/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-container text-4xl">mail</span>
+          </div>
+          <span class="font-label text-sm text-outline uppercase tracking-wider mb-2 group-hover:text-primary-fixed transition-colors">Email</span>
+          <span class="font-code text-lg text-on-surface">albermargar9@gmail.com</span>
+        </a>
+        <a class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-b-4 border-b-primary-container group transition-all duration-300 flex flex-col items-center text-center" href="https://github.com/Alber11">
+          <div class="mb-6 p-4 rounded-full bg-primary-container/10 group-hover:bg-primary-container/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-container text-4xl">code</span>
+          </div>
+          <span class="font-label text-sm text-outline uppercase tracking-wider mb-2 group-hover:text-primary-fixed transition-colors">GitHub</span>
+          <span class="font-code text-lg text-on-surface">github.com/Alber11</span>
+        </a>
+        <a class="glass-panel bg-surface-container-lowest/50 rounded-xl p-8 border-b-4 border-b-primary-container group transition-all duration-300 flex flex-col items-center text-center" href="https://www.linkedin.com/in/alberto-mart%C3%ADn-garc%C3%ADa-0736a3218/">
+          <div class="mb-6 p-4 rounded-full bg-primary-container/10 group-hover:bg-primary-container/20 transition-colors">
+            <span class="material-symbols-outlined text-primary-container text-4xl">account_circle</span>
+          </div>
+          <span class="font-label text-sm text-outline uppercase tracking-wider mb-2 group-hover:text-primary-fixed transition-colors">LinkedIn</span>
+          <span class="font-code text-lg text-on-surface">www.linkedin.com</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="w-full py-12 border-t border-white/5 bg-slate-950 flex items-center px-12 gap-6 font-space-grotesk text-xs uppercase tracking-widest justify-center">
+      <div class="w-full text-center text-slate-500 font-label uppercase tracking-[0.3em] text-[10px] md:text-xs">
+        ALBERTO MARTIN GARCIA · MADRID · 2025
+      </div>
+    </footer>
+  </body>
+</html>
