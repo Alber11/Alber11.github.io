@@ -245,10 +245,12 @@
             Trajectory // <span class="text-primary-fixed">Profile</span>
           </h2>
           <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-            Academic progresion and core operational parameters.
+            Academic progression and core operational parameters.
           </p>
         </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <!-- Current Runtime -->
           <div class="glass-panel rounded-2xl col-span-1 lg:col-span-8 flex flex-col justify-between p-8 md:p-10">
             <div>
               <div class="flex items-center gap-4 mb-4">
@@ -275,6 +277,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Certifications -->
           <div class="col-span-1 lg:col-span-4 flex flex-col gap-10 h-full">
             <div class="glass-panel rounded-2xl p-10 relative overflow-hidden group flex-1 flex flex-col justify-center">
               <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
@@ -298,6 +302,74 @@
             </div>
           </div>
         </div>
+
+        <!-- 42 Madrid Cursus -->
+        <div class="mt-10 col-span-full">
+          <div class="glass-panel rounded-2xl p-8 md:p-10 border-l-4 border-l-tertiary-container relative overflow-hidden group">
+            <div class="absolute -bottom-4 right-4 opacity-5 group-hover:opacity-15 transition-opacity pointer-events-none">
+              <span class="material-symbols-outlined text-[140px] text-tertiary-container">memory</span>
+            </div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div class="max-w-3xl">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <span class="font-label text-label text-tertiary-fixed-dim uppercase tracking-wider">
+                    Academic_Program // Cursus
+                  </span>
+                  <span class="inline-flex items-center gap-2 bg-surface-container-lowest border border-primary-fixed/40 text-primary-fixed font-code text-xs px-3 py-1 rounded uppercase">
+                    <span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00f0ff] animate-pulse"></span>
+                    In Progress
+                  </span>
+                </div>
+
+                <div class="flex items-center gap-4 mb-4">
+                  <span class="material-symbols-outlined text-tertiary-container text-4xl md:text-5xl">code_blocks</span>
+                  <h3 class="font-h3 text-2xl md:text-h3 text-on-background font-bold break-words">
+                    42 Madrid <span class="text-tertiary-fixed-dim">// Fundación Telefónica</span>
+                  </h3>
+                </div>
+
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                  Admitted to the 42 Madrid Cursus after completing the intensive C & Shell Piscine.
+                  Training under a peer-to-peer, project-based methodology focused on low-level programming,
+                  algorithmic problem-solving, memory management, and Unix/Linux systems.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-surface-container-lowest border border-outline-variant text-tertiary-fixed-dim font-label text-label px-2.5 py-1 rounded uppercase">
+                    C
+                  </span>
+                  <span class="bg-surface-container-lowest border border-outline-variant text-tertiary-fixed-dim font-label text-label px-2.5 py-1 rounded uppercase">
+                    Shell
+                  </span>
+                  <span class="bg-surface-container-lowest border border-outline-variant text-tertiary-fixed-dim font-label text-label px-2.5 py-1 rounded uppercase">
+                    Unix / Linux
+                  </span>
+                  <span class="bg-surface-container-lowest border border-outline-variant text-tertiary-fixed-dim font-label text-label px-2.5 py-1 rounded uppercase">
+                    Peer-to-Peer
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-row lg:flex-col gap-6 lg:gap-4 border-t lg:border-t-0 lg:border-l border-outline-variant/50 pt-6 lg:pt-0 lg:pl-8 shrink-0">
+                <div>
+                  <span class="block font-label text-label text-outline uppercase tracking-wider mb-1">Track</span>
+                  <span class="font-code text-code text-tertiary-fixed">Common_Core</span>
+                </div>
+                <div>
+                  <span class="block font-label text-label text-outline uppercase tracking-wider mb-1">Campus</span>
+                  <span class="font-code text-code text-on-surface">MADRID (Distrito Telefónica)</span>
+                </div>
+                <div>
+                  <span class="block font-label text-label text-outline uppercase tracking-wider mb-1">Since</span>
+                  <span class="font-code text-code text-primary-fixed">2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LinkedIn Updates -->
         <div class="mt-10 col-span-full">
           <div class="glass-panel rounded-2xl p-10 md:p-16 flex flex-col justify-between">
             <div>
@@ -313,7 +385,7 @@
               </p>
             </div>
             <div class="mt-10">
-              <a class="inline-flex items-center gap-2 font-code text-code text-primary-fixed hover:text-primary transition-all" href="#">
+              <a class="inline-flex items-center gap-2 font-code text-code text-primary-fixed hover:text-primary transition-all" href="https://www.linkedin.com/in/alberto-mart%C3%ADn-garc%C3%ADa-0736a3218/" target="_blank">
                 <span class="material-symbols-outlined">open_in_new</span>
                 View Latest Updates
               </a>
@@ -481,7 +553,69 @@
             </div>
           </div> 
 
-          <!-- Project 3: Upcoming Project (New layout from image) -->
+          <!-- Project 4 (Large): PeliculasCRUD -->
+          <div class="glass-panel rounded-xl col-span-1 md:col-span-12 overflow-hidden group relative flex flex-col md:flex-row">
+            
+            <div class="h-64 md:h-auto md:w-2/5 bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest relative overflow-hidden border-b md:border-b-0 md:border-r border-outline-variant/30 flex items-center justify-center">
+              <!-- Si tienes una captura del proyecto, descomenta esta etiqueta <img> y borra el <div> del icono -->
+              <!--
+              <img
+                alt="PeliculasCRUD Preview"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                src="TU_URL_DE_IMAGEN_AQUI"
+              />
+              -->
+              <div class="flex flex-col items-center justify-center opacity-50 group-hover:opacity-90 transition-opacity duration-500">
+                <span class="material-symbols-outlined text-7xl text-primary-container drop-shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+                  movie
+                </span>
+                <span class="font-code text-xs text-primary-fixed uppercase tracking-widest mt-3">
+                  CRUD // Desktop App
+                </span>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-surface-container-highest/80 to-transparent pointer-events-none"></div>
+              
+              <!-- Language/Tool Tags -->
+              <div class="absolute bottom-4 left-4 flex gap-2 flex-wrap">
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Java
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Swing
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  MySQL
+                </span>
+                <span class="bg-surface-container-lowest border border-outline-variant text-primary-fixed font-label text-label px-2 py-1 rounded uppercase">
+                  Maven
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-6 md:p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-h3 text-2xl md:text-h3 text-primary-container mb-3 break-words group-hover:text-primary-fixed transition-colors">
+                  PeliculasCRUD
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-3xl">
+                  A Java desktop application for managing a movie catalog backed by a MySQL database. Built with Swing and Maven, it implements full CRUD operations (Create, Read, Update, Delete) with persistent relational storage and a modular architecture.
+                </p>
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  class="font-code text-code text-primary-fixed hover:text-primary transition-colors flex items-center gap-2 border border-primary-fixed/50 hover:bg-primary-fixed/10 px-5 py-2 rounded w-fit"
+                  href="https://github.com/Alber11/PeliculasCRUD"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Project -->
           <div class="bg-surface-variant/20 backdrop-blur-md border-2 border-dashed border-outline/30 hover:border-primary-container/50 shadow-[inset_1px_1px_0px_0px_rgba(255,255,255,0.1)] rounded-xl col-span-1 md:col-span-12 overflow-hidden group relative flex flex-col sm:flex-row transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,240,255,0.2)]">
             
             <!-- Left Block (+) -->
